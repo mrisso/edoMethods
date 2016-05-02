@@ -1,18 +1,51 @@
 \documentclass{article}
-\title {1\b o Trabalho de Algoritmos Num\'ericos}
-\author{Matheus H. Risso e Pedro P. Ladeira}
-\date{03/05/2016}
+\usepackage{graphicx}
 \begin{document}
 \pagenumbering{gobble}
-\maketitle
 \begin{enviroment}
-\tiny
-Trabalho da disciplina de Algoritmos Numéricos I, ministrada pelo Dr. Thomas W. Rauber
-\end {enviroment}
+\end{enviroment}
+\thispagestyle{empty}
+\begin{center}
+{\Large \bf Universidade Federal do Esp\'irito Santo\\[5pt]
+Departamento de Inform\'atica
+\end{center}
+\vspace
+*
+{\stretch{1}}
+\begin{center}
+{\huge \bf 
+1\b o Trabalho de Algoritmos Num\'ericos:\\
+M\'etodos de aproxima\c c\~ao
+
+\end{center}
+\vspace
+*
+{\stretch{1}}
+\begin{flushright}
+Alunos: Matheus H. Risso e Pedro P. Ladeira\\
+Professor: Prof. Dr. Thomas W. Rauber
+\end{flushright}
+\vspace
+*
+{\stretch{1}}
+\begin{center}\begin{minipage}{12cm}
+Trabalho da disciplina de Algoritmos Num\'ericos I, 
+ministrada pelo Professor Dr. Thomas W. Rauber como forma de avalia\c c\~ao;
+Universidade Federal do Esp\'irito Santo, 2016/1.
+\end{minipage}\end{center}
+\vspace
+*
+{\stretch{1}}
+\centerline{\bf Vit\'oria-ES, 3 de Maio de 2016}
+\vspace
+*
+{\stretch{1}}
+
 \newpage
 \pagenumbering{arabic}
 \renewcommand{\contentsname}{Sum\'ario}
 \tableofcontents
+
 \newpage
 
 \section{Introdu\c c\~ao}
@@ -21,31 +54,79 @@ possui apenas uma vari\'avel independente.
 \paragraph{}EDOs s\~ao frequentemente usadas na f\'isica para descrever fen\^omenos naturais, por\'em nem sempre uma EDO possui uma solu\c c\~ao anal\'itica. 
 Para solucionar isso foram criados os m\'etodos num\'ericos que aproximam-se de uma solu\c c\~ao anal\'itica. 
 \paragraph{}Iremos abordar neste trabalho fun\c c\~oes que possuem solu\c c\~oes anal\'iticas e aplicar os m\'etodos de aproxima\c c\~ao para solu\c c\~ao num\'erica
-de Euler, Euler Melhorado, Euler Modificado, Runge-Kutta de terceira ordem e Bogacki-Shampine.
+de Euler, Euler Melhorado, Euler Modificado, Runge-Kutta de terceira ordem (expl\'icito) e Dormand-Prince (embutido).
 \newpage
 \section{Objetivos}
 \paragraph{}Este trabalho tem como objetivo entender e comparar diversos m\'etodos num\'ericos quanto a efici\^encia em se aproximar de solu\c c\~oes anal\'iticas e 
 os aplicar num problema pr\'atico.
 \paragraph{}Para isso utilizaremos a ferramenta computacional Octave GNU para criar fun\c c\~oes que descrevem os m\'etodos num\'ericos citados na especifica\c c\~ao.
-Al\'em disso cuidaremos para que o c\'odigo seja compat\'ivel com Octave como com o MATLAB.
+Al\'em disso cuidaremos para que o c\'odigo seja compat\'ivel tanto com Octave como com o MATLAB.
 
 \newpage
 \section{Metodologia}
-	\subsection{Cria\c c\~ao dos m\'etodos}
-\paragraph{}Utilizando o material sugerido na especifica\c c\~ao do trabalho entendemos cada m\'etodo e criamos fun\c c\~oes que descrevem cada um deles. Com isso 
-comparamos com a solu\c c\~ao anal\'itica graficamente, definimos o erro e montamos uma tabela com os pontos.
+	\subsection{Cria\c c\~ao das fun\c c\~oes descritivas}
+	\paragraph{}Utilizando o material sugerido na especifica\c c\~ao do trabalho entendemos cada m\'etodo e criamos fun\c c\~oes que descrevem cada um deles. Com isso 
+	comparamos com a solu\c c\~ao anal\'itica graficamente, definimos o erro e montamos uma tabela com os pontos.
 		\subsubsection{Euler}
+		C\'odigo fonte que descreve o m\'etodo de Euler, dado a fun\c c\~ao(func), limite inferior de x(xi), 
+		y inicial(yi), quantidade de pontos(p) e limite superior x(xf).
+			\begin{figure}[h!]
+			\includegraphics[width=\linewidth]{Euler.jpg}
+			\caption{M\'etodo de Euler}
+			\end{figure}
 		\subsubsection{Euler Melhorado}
+		C\'odigo fonte que descreve o m\'etodo de Euler Melhorado, dado a fun\c c\~ao(func), limite inferior de x(xi), 
+		y inicial(yi), quantidade de pontos(p) e limite superior x(xf).
+			\begin{figure}[h!]
+			\includegraphics[width=\linewidth]{EulerMelhorado.jpg}
+			\caption{M\'etodo de Euler Melhorado}
+			\end{figure}
+\newpage
 		\subsubsection{Euler Modificado}
+		C\'odigo fonte que descreve o m\'etodo de Euler Modificado, dado a fun\c c\~ao(func), limite inferior de x(xi), 
+		y inicial(yi), quantidade de pontos(p) e limite superior x(xf).
+			\begin{figure}[h!]
+			\includegraphics[width=\linewidth]{EulerModificado.jpg}
+			\caption{M\'etodo de Euler Modificado}
+			\end{figure}
 		\subsubsection{Runge-Kutta de 3\b a Ordem}
-		\subsubsection{Bogacki-Shampine}
-		\subsubsection{Gr\'afico, C\'alculo do Erro e Tabela de Pontos}
-	\subsection{Aplica\c c\~ao Pr\'atica}
+		C\'odigo fonte que descreve o m\'etodo de Runge-Kutta de 3\b a Ordem, dado a fun\c c\~ao(func), limite inferior de x(xi), 
+		y inicial(yi), quantidade de pontos(p) e limite superior x(xf).
+			\begin{figure}[h!]
+			\includegraphics[width=\linewidth]{RungeKutta.jpg}
+			\caption{M\'etodo de Euler Runge-Kutta de 3\b a Ordem}
+			\end{figure}
+\newpage
+		\subsubsection{Dormand-Prince}
+		C\'odigo fonte que descreve o m\'etodo de Dormand-Prince, dado a fun\c c\~ao(func), limite inferior de x(xi), 
+		y inicial(yi), quantidade de pontos(p) e limite superior x(xf).
+			\begin{figure}[h!]
+			\includegraphics[width=\linewidth]{DormandPrince.jpg}
+			\caption{M\'etodo de Dormand-Prince}
+			\end{figure}
+		\subsubsection{Gr\'afico Comparativo, C\'alculo de Erro e Tabela}
+		Criamos uma fun\c c\~ao para plotar os m\'etodos em um gr\'afico afim de compara-los com a solu\c c\~ao anal\'itica. 
+		Al\'em disso esta fun\c c\~ao mostra o erro graficamente como uma linha que liga os pontos de cada m\'etodo 
+		que possuem a mesma ordenada e gera uma tabela dos pontos.
+		\begin{itemize}
+		\item C\'odigo-Fonte
+		\item Gr\'afico
+		\item Tabela
+		\end{itemize}
+	\subsection{Aplica\c c\~ao Pr\'atica (Problema do Reservat\'orio) }
 \newpage
 \section{Resultados e Avalia\c c\~oes}
 \newpage
 \section{Refer\^encias Bibliogr\'aficas}
+\begin{itemize}
+\item
 http://www.somatematica.com.br/superior/equacoesdif/eq.php
-https://pt.wikipedia.org/wiki/Lista_de_m%C3%A9todos_Runge-Kutta
-https://pt.wikipedia.org/wiki/M%C3%A9todo_de_Runge-Kutta
+\item
+https://pt.wikipedia.org/wiki/Lista\_de\_m\%C3\%A9todos\_Runge-Kutta
+\item
+https://pt.wikipedia.org/wiki/M\%C3\%A9todo\_de\_Runge-Kutta
+\item 
+CAMPOS FILHO, Frederico Ferreira. Algoritmos Num\'ericos. 2 ed. Rio de Janeiro: LTC, 2012.
+\end{itemize}
+\newpage
 \end{document}
