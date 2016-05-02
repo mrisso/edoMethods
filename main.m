@@ -1,18 +1,13 @@
 clear all;
 clc;
 
-f = @(x,y) 2*x*y;
+% Definições f's:
+f1 = @(x,y) 2*x*y;
+a1 = @(x) exp(power(x,2)-1);
 
-x0 = 1;
-y0 = 1;
-p = 6;
-xf = 1.5;
+x01 = 1;
+y01 = 1;
+p1 = 6;
+xf1 = 1.5;
 
-[x, y] = euler(f,x0,y0,p,xf);
-[x, yM] = eulerMelhorado(f,x0,y0,p,xf);
-[x, yMod] = eulerModificado(f,x0,y0,p,xf);
-[x, yR] = rungeKutta(f,x0,y0,p,xf);
-
-plot(x,exp(power(x,2)-1),x,yM,x,yMod,x,yR,x,y);
-legend('Analitica','Euler Melhorado', 'Euler Modificado','Runge-Kutta 3ªO', 'Euler');
-grid on;
+plotM(f1,a1,x01,y01,p1,xf1);

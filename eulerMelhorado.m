@@ -9,4 +9,4 @@ function [x, y] = eulerMelhorado (func, xi, yi, p, xf)
     x(i+1) = x(i) + delta;
   end
   
-endfunction
+end
