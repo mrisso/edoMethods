@@ -1,5 +1,6 @@
 clear all;
 clc;
+more off;
 
 % Definições f's:
 f1 = @(x,y) 2*x*y;
@@ -29,11 +30,11 @@ end
 figure('name','Grafico Solução');
 plot(t,Y,t,Q1,t,Q2,t,Va,t,E);
 grid on;
-legend('V-Vo','Afluente','Efluente','Vazamento','Ruído');
+legend('V','Afluente','Efluente','Vazamento','Ruído');
 
 %Tabelas Solução
 fprintf('%59s\n\n','==Resultados==');
-fprintf('%15s | %15s | %15s | %15s | %15s | %15s\n','t', 'V-Vo', 'Afluente', 'Efluente', 'Vazamento', 'Ruído');
+fprintf('%15s | %15s | %15s | %15s | %15s | %15s\n','t', 'V', 'Afluente', 'Efluente', 'Vazamento', 'Ruído');
 for i = 1: 128 fprintf('='); end; fprintf('\n');
 for i = 1: length(t)
 	fprintf('%15.2f | %15.2f | %15.2f | %15.2f | %15.2f | %15.2f\n', t(i), Y(i), Q1(i), Q2(i), Va(i), E(i));
