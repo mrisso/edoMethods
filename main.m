@@ -12,4 +12,6 @@ xf1 = 1.5;
 
 plotM(f1,a1,x01,y01,p1,xf1);
 
-euler(fv,0,500,101,100);
+FV = @(x,y) fv(x);
+[t, Y] = euler(FV,0,500,101,100);
+plot(t,Y);
