@@ -11,6 +11,7 @@ function plotM (f,a,x0,y0,p,xf)
 	xA = x0:0.1:xf;
 
 	%Plot Funções
+	figure('name','Grafico Comparativo');
 	plot(x,a(xA),x,yDP,x,yM,x,yMod,x,yR,x,y);
 	legend('Analitica', 'Dormand-Prince', 'Euler Melhorado', 'Euler Modificado', 'Runge-Kutta 3ªO', 'Euler');
 	grid on;
